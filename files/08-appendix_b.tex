@@ -1,0 +1,176 @@
+\chapter{Appendix C: Tabellenwerte}\label{chap:appendixB}
+\section{Parameter zur Berechnung der Zerstäubungsausbeute}
+\begin{table}[!htb]
+	\caption{Werte für den Parameter \(Q_y\) zur Berechnung der physikalischen Zerstäubungsausbeute \cite{PWI-Dirk}(S. 81). Die Zeile gibt das Material an, aus welchem das Target besteht, die Spalte das auftreffende Ion. Selbstzerst. kürz Selbstzerstäubung ab.}\label{tab:Qy}
+	\centering
+	\begin{tabular}{|c||r|r|r|r|r|r|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerst.&Sauerstoff\\\hline\hline
+		Beryllium&0,07&0,11&0,14&0,28&0,67&-\\\hline
+		Kohlenstoff&0,05&0,08&0,10&0,20&0,75&1,02\\\hline
+		Eisen&0,07&0,12&0,16&0,33&10,44&-\\\hline
+		Molybdän&0,05&0,09&0,12&0,24&16,27&-\\\hline
+		Wolfram&0,04&0,07&0,10&0,20&33.47&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Werte für den Parameter \(E_{TF}\) in (\unit{eV}) zur Berechnung der physikalischen Zerstäubungsausbeute \cite{PWI-Dirk}(S. 81). Die Zeile gibt das Material an, aus welchem das Target besteht, die Spalte das auftreffende Ion. Selbstzerst. kürz Selbstzerstäubung ab.}\label{tab:ETF}
+	\centering
+	\begin{tabular}{|c||r|r|r|r|r|r|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerst.&Sauerstoff\\\hline\hline
+		Beryllium&256&282&308&720&2.208&-\\\hline
+		Kohlenstoff&415&447&479&1.087&5.688&9.298\\\hline
+		Eisen&2.544&2.590&2.635&5.517&174.122&-\\\hline
+		Molybdän&4.719&4.768&4.817&9.945&533.127&-\\\hline
+		Wolfram&9.871&9.925&9.978&20.376&1.998.893&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Werte für die Schwellenenergie der physikalischen Zerstäubung \(E_{th}\) in (\unit{eV}) zur Berechnung der physikalischen Zerstäubungsausbeute \cite{PWI-Dirk}(S. 81). Die Zeile gibt das Material an, aus welchem das Target besteht, die Spalte das auftreffende Ion. Selbstzerst. kürz Selbstzerstäubung ab.}\label{tab:EthPhys}
+	\centering
+	\begin{tabular}{|c||r|r|r|r|r|r|}\hline
+		Target/Ion&Wasserstoff&Deuterium&Tritium&Helium&Selbstzerst.&Sauerstoff\\\hline\hline
+		Beryllium&13&13&15&16&24&-\\\hline
+		Kohlenstoff&31&28&30&32&53&61,54\\\hline
+		Eisen&61&32&23&20&31&-\\\hline
+		Molybdän&172&83&56&44&49&-\\\hline
+		Wolfram&447&209&136&102&62&-\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Werte für die Sublimationswärme \(E_s\) in (\unit{eV}) zur Berechnung der physikalischen Zerstäubungsausbeute \cite{PWI-Dirk}(S. 81).}\label{tab:Es}
+	\centering
+	\begin{tabular}{|r|r|r|r|r|}\hline
+		Beryllium&Kohlenstoff&Eisen&Molybdän&Wolfram\\\hline\hline
+		3,38&7,42&4,34&6,83&8,68\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Werte für die Fitparameter für die Fitfunktionen \(f\), \(b\) und \(c\) zur Berechnung der physikalischen Zerstäubungsausbeute mit\\\(Fitfunktion = y0 + \sum_i A_i \cdot \exp\left(-\frac{E - x0}{t_i}\right)\) \cite{BehrischEckstein}.}\label{tab:fitMarkus1}
+	\centering
+	\begin{tabular}{|c||r|r|r|}\hline
+		Parameter/Funktion&\multicolumn{1}{c|}{f}&\multicolumn{1}{c|}{b}&\multicolumn{1}{c|}{c}\\\hline\hline
+		y0&4,55878&1,22200&0,85257\\\hline
+		x0&25,5644&27,59683&37,36542\\\hline
+		A1&20,17943&10,24535&-0,10577\\\hline
+		t1&29,8123&31,09355&346,95644\\\hline
+		A2&12,08692&7,29825&-0,11142\\\hline
+		t2&150,66038&185,60025&346,94662\\\hline
+		A3&8,99236&4,90847&-0,12915\\\hline
+		t3&946,68968&1040,42162&346,92395\\\hline    
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Werte für den Fitparameter \(Y_0\) zur Berechnung der physikalischen Zerstäubungsausbeute in Abhängigkeit der Teilchenenergie \(E\) in (\unit{eV}) mit \(E_{min} \ll E \le E_{max}\) und \(E'=E/\)\unit{eV} \cite{BehrischEckstein}.}\label{tab:fitMarkus2}
+	\centering
+	\begin{tabular}{|r|r||r|}\hline
+		\(E_{min}\)&\(E_{max}\)&\multicolumn{1}{c|}{\(Y_0\)}\\\hline\hline
+		\(-\infty\)&0&0\\\hline
+		0&40& -3,318\(\times 10^{-4}\) + 1,167\(\times 10^{-5} \cdot E'\)\\\hline
+		40&50&-0,00141 + 3,86\(\times 10^{-5} \cdot E'\)\\\hline
+		50&70&-0,0046 + 1,0245\(\times 10^{-4} \cdot E'\)\\\hline
+		70&100&-0,01206 + 2,09\(\times 10^{-4} \cdot E'\)\\\hline
+		100&140&-0,02231 + 3,115\(\times 10^{-4} \cdot E'\)\\\hline
+		140&200&-0,0256 + 3,35\(\times 10^{-4} \cdot E'\)\\\hline
+		200&300&-0,019 + 3,02\(\times 10^{-4} \cdot E'\)\\\hline
+		300&500&0,005 + 2,22\(\times 10^{-4} \cdot E'\)\\\hline
+		500&1000&0,054 + 1,24\(\times 10^{-4} \cdot E'\)\\\hline
+		1000&3000&0,1425 + 3,55\(\times 10^{-5}\cdot E'\)\\\hline
+		3000&\(\infty\)&0\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+	\caption{Tabellenwerte der Fitparameter \(Q_y\) und \(C_d\) sowie der Schwellenenergien \(E_{th}\), \(E_{thd}\) und \(E_{ths}\) in (\unit{eV}) zur Berechnung der chemischen Zerstäubungsausbeute durch Wasserstoff, Deuterium und Tritium \cite{PWI-Dirk}.}\label{tab:ParameterChem}
+	\centering
+	\begin{tabular}{|c||r|r|r|}\hline
+		Parameter/Ion&Wasserstoff&Deuterium&Tritium\\\hline\hline
+		\(Q_y\)&0.035&0.1&0.12\\\hline
+		\(C_d\)&250&125&83\\\hline
+		\(E_{th}\)&31&27&29\\\hline                                                                        
+		\(E_{thd}\)&15&15&15\\\hline   
+		\(E_{ths}\)&2&1&1\\\hline  
+	\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+	\caption{Werte für die molaren Ionenmassen \(M_i\) in (\unit{u}), die tatsächliche Masse \(m_i\) in (\unit{kg}) ergibt sich aus \(M_i \cdot u = M_i \cdot 10^{-3}/N_A\).}\label{tab:mi}
+	\centering
+	\begin{tabular}{|r|r|r|r|r|}\hline
+		Wasserstoff&Deuterium&Tritium&Kohlenstoff&Sauerstoff\\\hline\hline
+		1,008&2,012&3,016&12,011&15,999\\\hline
+	\end{tabular}
+\end{table}
+\clearpage
+\section{Daten zu Wendelstein 7-X}
+\begin{table}[!htb]
+	\caption{Borierung des Plasmagefäßes von Wendelstein 7-X in OP2.2 und OP2.3.}\label{tab:Bor}
+	\centering
+	\begin{tabular}{|c|c|}\hline
+		Operational Phase&Datum der Borierung\\\hline\hline
+		\multirow{3}{*}{OP2.2}&13.09.2024\\\cline{2-2}
+		&18.10.2024\\\cline{2-2}
+		&22.11.2024\\\hline
+		\multirow{2}{*}{OP2.3}&14.02.2025\\\cline{2-2}
+		&11.04.2025\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Anteile der wichtigsten Magnetfeldkonfigurationen an der Plasmazeit in OP2.2 und OP2.3 von Wendelstein 7-X.}\label{tab:configOP223}
+	\centering
+	\begin{tabular}{|c|c||r|r|r||r|r|r|}\hline
+		\multirow{3}{*}{Konfiguration}&\multirow{3}{*}{Iota}&\multicolumn{3}{c||}{OP2.2}&\multicolumn{3}{c|}{OP2.3}\\\cline{3-8}
+		&&Entlad-&\multicolumn{2}{c||}{Plasmazeit}&Entlad-&\multicolumn{2}{c|}{Plasmazeit}\\\cline{4-5}\cline{7-8}
+		&&ungen&(s)&(\%)&ungen&(s)&(\%)\\\hline\hline
+		DBM&low&17&99&0,48&121&5173&18,26\\\hline
+		EIM&standard&989&11478&56,35&1024&14466&51,06\\\hline
+		KJM&standard&320&3040&14,92&383&4171&14,72\\\hline
+		FTM&high&148&1533&7,52&289&3047&10,76\\\hline\hline
+		FMM&high&118&1358&6,67&48&485&1,71\\\hline\hline
+		sonstige&-&210&2862&14,05&478&4688&16,55\\\hline
+		alle&-&1802&20371&100&2343&28329&100\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Toroidaler Winkel der Positionen der Langmuir Sonden \cite{ArunLP}.}\label{tab:phiLP}
+	\centering
+	\begin{tabular}{|c|r|}\hline
+		Position&\multicolumn{1}{c|}{\(\Phi\) in (\unit{\degree})}\\\hline\hline
+		Untere Divertoreinheit: TM2h07, TM3h01&277,6\\\hline
+		Obere Divertoreinheit: TM2h07, TM3h01&298,5\\\hline
+		Untere Divertoreinheit: TM8h01&303,2\\\hline
+		Obere Divertoreinheit: TM8h01&272,9\\\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+	\caption{Einfallswinkel \(\zeta\) der Magnetfeldlinien auf den Divertor von Wendelstein 7-X für low-/standard-/high-iota Konfigurationen an den Positionen der Langmuir Sonden (LS) gemessen von der Targetoberfläche zur Oberflächennormalen. Die Werte von \(\zeta\) basieren auf den durch M. Endler bereitgestellten Tabellen für \(\zeta\) in DBM000+2520, EIM000+2520 und FTM004+2520. Die Position der Sonden ist durch den Abstand vom Pumpspalt definiert und teilt sich nach Divertorabschnitt (DA) in high- und low-iota auf.}\label{tab:MFieldAngle}
+	\centering
+	\begin{tabular}{|c||c|c|r||r|r|r|}\hline
+		LS&Target&DA&Position in (\unit{m})&\(\zeta_{low}\) in (\unit{\degree})&\(\zeta_{std}\) in (\unit{\degree})&\(\zeta_{high}\) in (\unit{\degree})\\\hline \hline
+		00&\multirow{6}{*}{TM2h07}&\multirow{14}{*}{low-iota}&0,106&0,420&1,848&3,439\\ \cline{1-1} \cline{4-7}
+		01&&&0,132&0,157&1,566&3,136\\ \cline{1-1} \cline{4-7}
+		02&&&0,158&0,157&1,230&2,777\\ \cline{1-1} \cline{4-7}
+		03&&&0,183&0,416&0,954&2,481\\ \cline{1-1} \cline{4-7}
+		04&&&0,209&0,673&0,679&2,188\\ \cline{1-1} \cline{4-7}
+		05&&&0,235&0,928&0,408&1,898\\ \cline{1-2} \cline{4-7}\noalign{\vskip\doublerulesep	\vskip-\arrayrulewidth} \cline{1-2} \cline{4-7}
+		06&\multirow{8}{*}{TM3h01}&&0,325&1,827&0,547&0,885\\ \cline{1-1} \cline{4-7}
+		07&&&0,351&2,072&0,805&0,611\\ \cline{1-1} \cline{4-7}
+		08&&&0,377&2,314&1,061&0,341\\ \cline{1-1} \cline{4-7}
+		09&&&0,403&2,603&1,365&0,020\\ \cline{1-1} \cline{4-7}
+		10&&&0,429&2,842&1,616&0,244\\ \cline{1-1} \cline{4-7}
+		11&&&0,454&3,080&1,866&0,506\\ \cline{1-1} \cline{4-7}
+		12&&&0,480&3,318&2,115&0,767\\ \cline{1-1} \cline{4-7}
+		13&&&0,506&3,556&2,364&1,027\\ \hline \hline
+		14&\multirow{4}{*}{TM8h01}&\multirow{4}{*}{high-iota}&0,092&5,198&5,426&5,684\\ \cline{1-1} \cline{4-7}
+		15&&&0,117&4,441&4,574&4,725\\ \cline{1-1} \cline{4-7}
+		16&&&0,133&4,063&4,150&4,246\\ \cline{1-1} \cline{4-7}
+		17&&&0,158&3,435&3,443&3,449\\ \hline
+	\end{tabular}
+\end{table}
