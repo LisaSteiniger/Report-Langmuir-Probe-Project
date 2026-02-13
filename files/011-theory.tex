@@ -6,9 +6,16 @@ Auf den Wandelementen von W7-X – konkret auf dem Divertor in Modul 5 (M5) – 
 Die Funktionsweise einer LS ist die Folgende: Die Stromstärke an der Probe wird in Abhängigkeit der an der Sonde angelegten Spannung gemessen, welche zwischen -180 V und 20 V variiert wird. Die Bestimmung der Elektronendichte und -temperatur basiert dann auf der Auswertung der Stromstärke-Spannungskurve. Im Normalfall ist diese im Elektronenanlaufstrombereich – dem für die
 Bestimmung relevanten Teil der Kurve – exponentiell.\\
 
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
-	\subfigure[Low-iota Bereich, TM2h07 und TM3h01]{LPPositionTM2h.png}
-	\subfigure[High-iota Bereich, TM8h01]{figures/LPPositionTM8h.png}
+	\subfigure[Low-iota Bereich, TM2h07 und TM3h01]{\includegraphics[width=0.7\textwidth]{figures/LPPositionTM2h.png}}
+	\subfigure[High-iota Bereich, TM8h01]{\includegraphics[width=0.7\textwidth]{figures/LPPositionTM8h.png}}
 	\caption{Position der Langmuir Sonden (rote Kreuze) auf den Targetelementen (rote Kästen). Der Pumpspalt ist jeweils auf der Seite mit dem Koordinatenursprung (oben).}\label{fig:LPposition}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.55]{figures/IU_LP.png}
+	\caption{Stromstärke-Spannungs-Kurve einer idealen Langmuir Sonde. \(V_f\) bezeichnet das Floating Potential mit dem Nettostrom \qty{0}{A}, \(V_s\) das Sättigungspotential. Der Ionensättigungsbereich ist gegeben durch ein Sondenpotential von maximal \(V_f\), zwischen \(V_f\) und \(V_s\) wird vom Elektronenanlaufstrombereich gesprochen und bei Sondenpotentialen über \(V_s\) vom Elektronensättigungsbereich. Das Sondenpotential wird relativ zum Plasmapotential angegeben. Die Abbildung wurde in \cite{tempLimit2} veröffentlicht.}\label{fig:IU}
 \end{figure}
