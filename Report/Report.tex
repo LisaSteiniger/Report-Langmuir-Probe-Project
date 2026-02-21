@@ -1,0 +1,130 @@
+%\documentclass[titlepage,twoside,a4paper,12pt,englisch,parskip=never]{scrreprt}%openright,
+
+\documentclass[paper=a4,
+fontsize=11pt,
+numbers=noenddot,%
+BCOR=10mm,          % Zusaetzlicher Rand auf der Innenseite
+DIV=11,            % Seitengroesse (siehe Koma Skript Dokumentation !)
+%twoside,			% adds additional empty pages at the end of the chapter
+english,
+openright,
+makeglossaries,
+final,
+ngerman
+]{scrreprt}
+
+% scrbook  -- buchformat   | einseitig
+% scrreprt -- reportformat | beidseitigd
+
+\usepackage[T1]{fontenc}    % Für korrekte Silbentrennung und Darstellung von Umlauten
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[bf,footnotesize]{caption}
+\usepackage{color}
+\usepackage{makeidx}
+\usepackage[final]{pdfpages}
+\usepackage[bottom]{footmisc}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{floatflt}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{nomencl}[intoc] 
+\usepackage[backend=biber,style=numeric,sorting = none]{biblatex}
+\usepackage{subfigure}
+\usepackage{multirow}
+\addbibresource{bibfile.bib}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat{pages}{#1} 
+\AtEveryBibitem{\clearfield{number}}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty = true}
+\usepackage[defaultlines=3,all]{nowidow}
+\usepackage[pdfauthor={Lisa Steiniger}, pdfsubject=Bachelorthesis, pdftitle={title}, colorlinks=true, breaklinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, bookmarksopen]{hyperref}
+\urlstyle{same}
+\usepackage{pdfpages} 
+\parindent 0mm											% set indent space
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	breaklinks=true,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+%% This code creates the groups
+% -----------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+	\item[\bfseries
+	\ifstrequal{#1}{A}{Acronyms}{%
+		\ifstrequal{#1}{B}{Symbols}{%
+			\ifstrequal{#1}{C}{Physical Constants}{}}}%
+	]}
+
+% -----------------------------------------
+
+\begin{document}
+	\sisetup{output-decimal-marker = {,}}
+	\allowdisplaybreaks
+	
+	\setnowidow[3]
+	\setnoclub[3]
+	
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\input{files/00-titlepage}
+	\input{files/00-abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
+	%\addcontentsline{toc}{chapter}{Eigenständigkeitserklärung}
+	%\input{files/00-eigenstaendig}
+	
+	%\input{files/00-danksagung}
+	%\addcontentsline{toc}{chapter}{Danksagung}
+	\tableofcontents	
+    %\listoffigures
+	%\addcontentsline{toc}{chapter}{List of Figures}
+	
+    %\input{files/00-glossary}
+	%\printnomenclature[3cm]
+    %\addcontentsline{toc}{chapter}{Nomenclature}
+	
+	\newpage
+	\pagenumbering{arabic}
+	
+    \setcounter{page}{1}
+	\input{files/01-introduction}
+	\input{files/011-theory}
+	%\input{files/02-data_access}
+	\input{files/021-calculations}
+	\input{files/03-results}
+	\input{files/04-discussion}
+	\input{files/06-summary}
+	\input{files/05-outlook}
+	
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Literatur}
+	\printbibliography
+	
+	%\addtocontents{toc}{\protect\vspace{10pt}}
+	%\clearpage
+	%\addtocontents{toc}{\protect\clearpage}
+	\input{files/07-appendix_a}
+	\input{files/071-appendix_aa}
+	\input{files/08-appendix_b}
+	%\input{files/08-appendix_c}
+	
+%	\begingroup                    %to remove the double page free after the chapter
+%	\renewcommand{\cleardoublepage}{}
+%	\renewcommand{\clearpage}{}
+	
+\end{document}

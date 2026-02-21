@@ -1,0 +1,82 @@
+\chapter{Langmuir Sonden}\label{chap:theory}
+Langmuir Sonden sind gängige Messinstrumente in verschiedensten Anwendungen von Plasmen. So kommen sie auch in der Fusionsforschung als Diagnostik zur Bestimmung der Elektronendichte und Elektronentemperatur vor. Sie bieten den Vorteil eines verhältnismäßig einfachen Aufbaus - stark heruntergebrochen handelt es sich um einen Draht, der ins Plasma gehalten wird. Der genauere Aufbau wird im Folgenden noch einmal erläutert. Nicht ganz so einfach wie der Aufbau ist hingegen die Interpretation der Messungen. Auf das Messprinzip und die Bestimmung der Plasmaparameter aus den Messdaten wird nach der Beschreibung des Aufbaus eingegangen. Zuletzt werden in diesem Kapitel die Besonderheiten der Langmuir Sonden in W7-X für OP2.2 und OP2.3 angeführt.
+
+\section{Allgemeiner Aufbau einer Langmuir Sonde} 
+Die Bestimmung von Plasmaparametern mithilfe einer Langmuir Sonde basiert auf der grundlegenden Idee, einen Draht ins Plasma zu halten und die Stromstärke in Abhängigkeit eines variierenden Sondenpotentials zu messen. Um ein zuverlässig funktionierendes Messinstrument zu haben, ist ein Draht allein allerdings nicht ausreichend. Den allgemeinen Aufbau einer Langmuir Sonde legt dieser Abschnitt dar.\\
+
+Der ins Plasma eingeführte Draht muss aus einem gegenüber thermischen Lasten widerstandsfähigem Material wie Wolfram gefertigt sein und weist in der Regel einen sehr geringen Durchmesser von \qty{0,1}{mm} bis \qty{1}{mm} auf. Er ist in einem Keramikröhrchen befestigt - zumeist aus Aluminiumoxid - welches ihn bis auf die \qty{2}{mm} bis \qty{10}{mm} lange Spitze umgibt und vom Plasma abschirmt. Dieses Röhrchen sollte möglichst dünn sein, um den Einfluss auf das Plasma gering zu halten, muss aber weit genug sein, als dass der Draht es nicht berührt. Der Grund dafür ist, dass der Kontakt des Drahts zu leitenden Ablagerungen auf der Keramik verhindert werden soll. Der an den isolierten Draht angeschlossene Schaltkreis muss vom Plasma isoliert werden, beispielsweise durch eine gesonderte Vakuumkammer.  
+
+\section{Messprinzip einer Langmuir Sonde}
+Das Messprinzip von Langmuir Sonden basiert auf der Bestimmung der Stromstärke in Abhängigkeit der an der Sonde angelegten, variierenden Spannung. Aus der Analyse der sich ergebenden Stromstärke-Spannungs-Kurve (I-V-Kurve) können Rückschlüsse auf die vorherrschenden Plasmaparameter gezogen werden. Darauf wird in diesem Abschnitt eingegangen. Zunächst müssen allerdings die allgemeinen Konventionen eingeführt werden, die bei der Betrachtung der I-V-Kurven von Langmuir Sonden üblich sind.\\
+
+Die an die Sonde angelegte Spannung \(V_p\) wird in der Regel in Bezug zum Plasmapotential \(V_s\) (Space Potential) gesetzt, sodass als Spannung \(V\) die Differenz \(V_p - V_s\) angegeben wird. Weiterhin sind Elektronenströme \(I_e\) mit positivem Vorzeichen versehen, während Ionenströme \(I_i\) ein negatives Vorzeichen tragen. Zuletzt wird hier noch das Floating Potential \(V_f\) eingeführt, welches bei einem gemessenen Nettostrom \(I = I_e + I_i\) von \qty{0}{mA} vorliegt. Das ist der Fall, wenn Ionen- und Elektronenströme einander ausgleichen.
+
+\subsection{I-V-Kurve einer idealen Langmuir Sonde}
+Eine ideale Langmuir Sonde hat eine I-V-Kurve, welche in drei Hauptbereiche aufgeteilt und Abb. \ref{IU} entnommen werden kann. Für \(V_p \ll V_s\) werden durch das in Bezug auf das Plasmapotential negative Potential der Sonde Ionen angezogen, wohingegen Elektronen abgestoßen werden. Es werden vornehmlich Ionenströme gemessen, sodass der Nettostrom durch die Sonde negativ ist. Dieser Bereich wird als Ionensättigungsbereich bezeichnet. Für steigendes Sondenpotential mit \(V_p < V_f\) bleibt der Nettostrom negativ, der Betrag nimmt jedoch ab bis schließlich bei \(V_p = V_f\) kein Nettostrom mehr gemessen wird. Wird \(V_p\) weiter erhöht, wobei aber \(V_p < V_s\) gilt, so wird der Nettostrom positiv mit steigendem Betrag. Es handelt sich um den sogenannten Elektronenanlaufstrombereich, bei Maxwell-verteilten Geschwindigkeiten für Elektronen und Ionen ist der Anstieg hier exponentiell. Bei \(V_p \approx V_s\) knickt der Verlauf des Nettostroms in Abhängigkeit des Sondenpotentials ab und steigt nur noch sehr langsam weiter. Die Sonde befindet sich dann im Elektronensättigungsbereich, in dem durch das höhere Potential der Sonde in Bezug auf das Plasmapotential Elektronen angezogen und Ionen abgestoßen werden. Dass \(I\) weiter steigt hängt damit zusammen, dass das elektrische Sheath, welches die Sonde umgibt sich ausdehnt. Dadurch dehnt sich der Einzugsbereich der Sonde aus und die Anzahl der die Sonde erreichenden Elektronen nimmt langsam zu.\\
+ 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.55]{figures/IU_LP.png}
+	\caption{Stromstärke-Spannungs-Kurve einer idealen Langmuir Sonde, veröffentlicht in \cite{tempLimit2}.}\label{fig:IU}
+\end{figure}
+
+\subsection{Berechnung der Elektronentemperatur}
+Aus dem Verlauf der I-V-Kurve im Elektronenanlaufstrombereich kann die Elektronentemperatur in (\unit{eV}) bestimmt werden. Das kann dem folgenden Zusammenhang entnommen werden:
+
+\begin{align}
+	I_e &= I_{es} \exp{\left(e\frac{V_p - V_s}{k_B T_e}\right)}\\
+		&= A n_e e \sqrt{\frac{k_B T_e}{2 \pi m_e}} \exp{\left(e\frac{V_p - V_s}{k_B T_e}\right)} \label{eq:Ie}\text{\quad .}
+\end{align} 
+
+Dabei ist \(A\) die Fläche der Sondenspitze, \(k_B\) die Boltzmannkonstante und \(e\) die Elementarladung, während \(m_e\) die Elektronenmasse und \(I_{es}\) den Elektronensättigungsstrom bei \(V_p = V_s\) bezeichnet. Dieser Formel ist zu entnehmen, dass der Verlauf von \(ln(I_e(V_p))\) linear mit dem Anstieg \(1/T_{e, eV}\) ist, wobei die Elektronentemperatur hier in \unit{eV} gegeben ist. Der Grund dafür ist die Umrechnung von \(T_{e, K}\) in \(T_{e, eV}\) durch die Multiplikation mit \(k = k_B/e\). Es gilt:
+
+\begin{align*}
+	ln(I_e) &= ln(I_{es}) + e\frac{V_p - V_s}{k_B T_e}\\
+			&= ln(I_{es}) - e\frac{V_s}{k_B T_e} + e\frac{V_p}{k_B T_e}\\
+			&= const + \frac{e}{k_B T_e} V_p\text{\quad .}
+\end{align*}
+
+\subsection{Floating Potential und Berechnung des Plasmapotentials}
+Um das Plasmapotential zu bestimmen wird normalerweise das Floating Potential aus dem Verlauf der I-V-Kurve abgelesen. Aus der Definition von \(V_f\) - dem Vorliegen eines Nettostroms von \qty{0}{A} - ergibt sich die Berechnung für \(V_s\). Dazu werden die Formeln für \(I_e\) und \(I_i\) benötigt. Während der Elektronenstrom nach Formel \ref{eq:Ie} berechnet werden kann, ist für den Ionenstrom eine Abschätzung nach dem Bohm-Kriterium möglich. \(I_i\) beträgt dann 
+
+\begin{align}
+	I_i = -\alpha n_e e A \sqrt{\frac{k_B T_e}{m_i}}\label{eq:Ii} 
+\end{align}
+
+mit der Ionenmasse \(m_i\) und \(\alpha=n_{p,edge}/n_{p,main}\), wobei die Plasmadichte an der Grenze des Sheath der Langmuir Sonde mit der des Hauptplasmas ins Verhältnis gesetzt wird. Üblicherweise ist \(\alpha\)~=~0.6. Da bei \(V_p = V_f\) Ionen- und Elektronenstrom den selben Betrag haben, müssen Formel \ref{eq:Ie} und \ref{eq:Ii} gleichgesetzt werden:
+
+\begin{align*}
+	-\alpha n_e e A \sqrt{\frac{k_B T_e}{m_i}} &= A n_e e \sqrt{\frac{k_B T_e}{2 \pi m_e}} \exp{\left(e\frac{V_f - V_s}{k_B T_e}\right)}\\
+	-\alpha \sqrt{\frac{1}{m_i}} &= \sqrt{\frac{1}{2 \pi m_e}} \exp{\left(e\frac{V_f - V_s}{k_B T_e}\right)}\text{\quad .}
+\end{align*} 
+
+Umstellung ergibt 
+
+\begin{align*}
+	-\alpha \sqrt{\frac{2 \pi m_e}{m_i}} &= \exp{\left(e\frac{V_f - V_s}{k_B T_e}\right)}\\
+	V_s &= V_f + \frac{k_B T_e}{e} \ln{\left(\alpha \sqrt{\frac{2 \pi m_e}{4 m_i}}\right)} 
+\end{align*}
+
+für das Plasmapotential.
+
+\subsection{Berechnung der Elektronendichte}
+Die Berechnung der Elektronendichte ist am kompliziertesten und von den höchsten Fehlern betroffen. Das ist bedingt durch die ungenaue Bestimmung des Ionensättigungsstroms, aus welchem anschließend \(n_e\) berechnet wird. Auf das genaue Vorgehen wird hier nicht eingegangen.
+
+\subsection{I-V-Kurve einer realen Langmuir Sonde}
+Eine reale Langmuir Sonde zeigt einen vom Ideal abweichenden Verlauf der I-V-Kurve. So ist der Betrag von \(I_{es}\) hier aufgrund von Kollisionen im Plasma sowie der Präsenz eines Magnetfelds niedriger. Auch ist der scharfe Knick bei \(V_p \approx V_s\) abgerundet, wodurch seine Position schwerer zu bestimmen ist. Zusätzlich erschwerend auf die Bestimmung von \(V_s\) wirkt sich der Umstand aus, dass das Plasma in der Nähe der Sonde mit dieser interagiert. Demnach ist das dortige Plasmapotential nicht identisch mit dem des ungestörten Plasmas abseits der Sonde.\\
+
+Neben den bereits genannten Schwächen und Schwierigkeiten zeigen Langmuir Sonden auch systematische Fehler und Operationsbeschränkungen. Beispielsweise neigen sie zur Unterschätzung der Elektronentemperatur, da Sekundärelektronen mitgemessen werden. Das sind durch Impulsübertrag aus der Sonde herausgeschlagene Elektronen, die durch das Sondenpotential wieder von der Sonde angezogen werden und zum Nettostrom beitragen. Neben diesem Effekt verändert die Erosion der Sonde auch die Größe ihrer Oberfläche, die allerdings in die Berechnungen eingeht. Des Weiteren sind Langmuir Sonden in elektrischen Feldern als Messinstrumente unbrauchbar.  
+
+\section{Langmuir Sonden in Wendelstein 7-X}
+Auf den Wandelementen von W7-X – konkret auf dem Divertor in (M5) – sind 36 LS montiert. Sie befinden sich an symmetrischen Positionen der oberen und unteren Divertoreinheit (DU), je 18 Stück pro DU. Davon befinden sich vier im high-iota und 14 im low-iota Bereich, wo sie unter anderem die Messung von Elektronendichte und Elektronentemperatur ermöglichen. Die Positionen sind in Abb. \ref{fig:LPposition} als rote Kreuzchen markiert. Die toroidalen Winkel und genauen Positionen können Tab. \ref{tab:LPPhi} entnommen werden.\\
+
+\begin{figure}[!htb]
+	\centering
+	\subfigure[Low-iota Bereich, TM2h07 und TM3h01]{\includegraphics[width=0.7\textwidth]{figures/LPPositionTM2h.png}}
+	\subfigure[High-iota Bereich, TM8h01]{\includegraphics[width=0.7\textwidth]{figures/LPPositionTM8h.png}}
+	\caption{Position der Langmuir Sonden (rote Kreuze) auf den Targetelementen (rote Kästen). Der Pumpspalt ist jeweils auf der Seite mit dem Koordinatenursprung (oben).}\label{fig:LPposition}
+\end{figure}
+
+Aktuell erreicht W7-X eine Elektronendichte von standardmäßig \qty[per-mode=symbol]{3E+19}{\per\m\tothe{3}} bis \qty[per-mode=symbol]{6E+19}{\per\m\tothe{3}} und einer Gesamtheizleistung von bis zu \qty{8}{MW} sowie Entladungszeiten von maximal \qty{8}{min}. In Zukunft soll die Gesamtheizleistung auf \qty{10}{MW} und die Dauer einer Entladung auf \qty{30}{min} steigen. Aufgrund der damit verbundenen, schon jetzt sehr hohen thermischen Lasten von \qty[per-mode=symbol]{100}{\MW\per\m\tothe{2}} – \qty[per-mode=symbol]{200}{\MW\per\m\tothe{2}} bei direktem Kontakt mit dem Plasma können die Sonden dem Plasma nicht dauerhaft ausgesetzt sein. Das Material würde schmelzen und die Sonden würden zerstört. Statt stationären Sonden handelt es sich deshalb um sogenannte Pop-up Langmuir Sonden aus Wolfram mit einem Durchmesser von \qty{1}{mm}, die Keramikfassung hat einen Durchmesser von \qty{1,96}{mm}. Die Pop-up Sonden werden in Intervallen ins Plasma ein- und ausgefahren werden. Das resultiert in einer diskontinuierlichen Messung etwa aller \num{2}-\qty{3}{s}.\\
+
+Pro Messung ist eine Langmuir Sonde dem Plasma für höchstens \qty{50}{ms} ausgesetzt, bevor sie zum Abkühlen wieder aus dem Plasma zurück gezogen wird. In den \qty{50}{ms} sind die Haltezeit und die Dauer des Zurückziehens inbegriffen. Für die Messung liegt an den Langmuir Sonden eine Sinusspannung an die sich zwischen \qty{-180}{V} und \qty{20}{V} bewegt. Dieser Bereich wird während einer Messung mehrfach durchlaufen, wobei die Sondenspannung \(V_p\) erfasst wird. Zusätzlich wird die Spannung \(V_b\) gemessen, die in einem identischen Parallelschaltkreis ohne Langmuir Sonde vorliegt. Die Differenz \(V=V_p-V_b\) stellt das bereinigte Spannungssignal dar, welches möglichst frei vom Einfluss der langen Leitungen zu den Sonden ist. Die Stromstärke \(I_p\) kann nun unter Kenntnis des Vorwiderstandswerts \(R_s\) berechnet werden. Dieser liegt bei \qty{5}{\ohm}, einzusetzen in \(I_p=V/R_s\).\\
